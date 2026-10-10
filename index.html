@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy 26th Birthday Rameen Ali! 🎉</title>
+  <meta name="description" content="A special 26th birthday celebration website for Rameen Ali from Mama, Papa, Yasmin, and Mamoon with warm wishes and memories.">
+  
+  <!-- Google Fonts: Elegant Display + Authentic Handwritten Script + Clean Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Sound / Music Toggle -->
+  <div class="music-controller" id="musicController" title="Toggle Birthday Music">
+    <button class="music-btn" id="musicToggleBtn" aria-label="Toggle background music">
+      <div class="music-icon-wrap">
+        <svg class="music-icon icon-note" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+        </svg>
+      </div>
+      <div class="sound-wave" id="soundWave">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <span class="music-label" id="musicLabel">Play Music 🎵</span>
+    </button>
+    <audio id="bgAudio" loop autoplay preload="auto">
+      <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <!-- Background Decorative Canvas for Confetti & Fireworks -->
+  <canvas id="fxCanvas"></canvas>
+
+  <!-- Ambient Floating Emojis / Elements Layer (Dynamic per page) -->
+  <div class="ambient-layer" id="ambientLayer"></div>
+
+  <!-- Main Website Container -->
+  <div class="app-container">
+
+    <!-- Top Navigation & Progress Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <span class="badge-tag">Rameen's 26th • 11 Oct 2000</span>
+      </div>
+      
+      <!-- Stepper / Progress Dots -->
+      <nav class="progress-nav" aria-label="Page navigation">
+        <div class="progress-bar-track">
+          <div class="progress-bar-fill" id="progressBarFill"></div>
+        </div>
+        <div class="progress-dots" id="progressDots">
+          <button class="dot-btn active" data-step="0" aria-label="Group Wish"></button>
+          <button class="dot-btn" data-step="1" aria-label="Memories"></button>
+          <button class="dot-btn" data-step="2" aria-label="From Mama"></button>
+          <button class="dot-btn" data-step="3" aria-label="From Papa"></button>
+          <button class="dot-btn" data-step="4" aria-label="From Yasmin"></button>
+          <button class="dot-btn" data-step="5" aria-label="From Mamoon"></button>
+          <button class="dot-btn" data-step="6" aria-label="Celebration Finale"></button>
+        </div>
+      </nav>
+
+      <div class="header-right">
+        <span class="page-indicator" id="pageIndicator">1 / 7</span>
+      </div>
+    </header>
+
+    <!-- Pages Deck (Viewport Wrapper) -->
+    <main class="pages-viewport" id="pagesViewport">
+
+      <!-- ================= PAGE 1: GROUP WISH PAGE ================= -->
+      <section class="page-section active" id="page-0" data-page="0">
+        <div class="page-inner group-wish-layout">
+          
+          <div class="page-title-wrap">
+            <span class="sparkle-tag">✨ Together With Endless Love ✨</span>
+            <h1 class="main-title gold-gradient-text animate-pop">Happy Birthday Rameen! 🎉</h1>
+            <p class="subtitle-text">Celebrating 26 wonderful years of warmth, laughter & blessings</p>
+          </div>
+
+          <!-- Family Photo Centerpiece -->
+          <div class="family-photo-wrapper">
+            <div class="golden-photo-frame">
+              <div class="frame-shimmer"></div>
+              <img decoding="async" 
+                src="assets/images/family-group.jpg" 
+                alt="Mama, Papa, Yasmin and Mamoon with Rameen" 
+                class="family-group-img" 
+                id="familyGroupImg"
+                loading="eager"
+              />
+            </div>
+
+            <!-- Four Floating Pop-In Name Tags -->
+            <div class="name-tags-container">
+              <div class="family-tag tag-mama" style="--tag-delay: 0.3s;">
+                <span class="tag-avatar">🌸</span>
+                <div class="tag-info">
+                  <span class="tag-title">Mama</span>
+                  <span class="tag-sub">Always your dua</span>
+                </div>
+              </div>
+
+              <div class="family-tag tag-papa" style="--tag-delay: 0.6s;">
+                <span class="tag-avatar">👑</span>
+                <div class="tag-info">
+                  <span class="tag-title">Papa</span>
+                  <span class="tag-sub">Forever proud of you</span>
+                </div>
+              </div>
+
+              <div class="family-tag tag-yasmin" style="--tag-delay: 0.9s;">
+                <span class="tag-avatar">💖</span>
+                <div class="tag-info">
+                  <span class="tag-title">Yasmin</span>
+                  <span class="tag-sub">Your little partner in crime</span>
+                </div>
+              </div>
+
+              <div class="family-tag tag-mamoon" style="--tag-delay: 1.2s;">
+                <span class="tag-avatar">🌟</span>
+                <div class="tag-info">
+                  <span class="tag-title">Mamoon</span>
+                  <span class="tag-sub">Your loving brother</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="welcome-blurb glass-card">
+            <p>From all four of us to our darling Rameen Api — we’ve gathered our hearts and words just for you today. Walk with us through these pages! 💕</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PAGE 2: MEMORIES PAGE ================= -->
+      <section class="page-section" id="page-1" data-page="1">
+        <div class="page-inner memories-layout">
+          
+          <div class="page-title-wrap">
+            <span class="sparkle-tag">📸 Precious Milestones</span>
+            <h2 class="section-title gold-gradient-text">Memories of Rameen 🌸</h2>
+            <p class="subtitle-text">Every smile tells a story of grace, innocence and joy</p>
+          </div>
+
+          <!-- Slideshow Showcase -->
+          <div class="carousel-container" id="carouselContainer">
+            
+            <button class="carousel-arrow prev-arrow" id="carouselPrevBtn" aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <div class="carousel-stage" id="carouselStage">
+              
+              <!-- Slide 1 -->
+              <div class="carousel-slide active" data-slide="0">
+                <div class="slide-card">
+                  <div class="slide-img-box">
+                    <img decoding="async" src="assets/images/rameen-1.jpg" alt="" class="memory-img-bg" aria-hidden="true">
+                    <img decoding="async" src="assets/images/rameen-1.jpg" alt="Rameen childhood memory" class="memory-img" loading="eager">
+                  </div>
+                  <div class="slide-caption">
+                    <span class="caption-badge">Memory 1 • Little Princess</span>
+                    <p class="caption-text">“Our little guriya who brought sunshine and giggles into our lives right from the start!”</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide" data-slide="1">
+                <div class="slide-card">
+                  <div class="slide-img-box">
+                    <img decoding="async" src="assets/images/rameen-2.jpg" alt="" class="memory-img-bg" aria-hidden="true">
+                    <img decoding="async" src="assets/images/rameen-2.jpg" alt="Rameen school days memory" class="memory-img" loading="lazy">
+                  </div>
+                  <div class="slide-caption">
+                    <span class="caption-badge">Memory 2 • Smart & Determined</span>
+                    <p class="caption-text">“Growing up with confidence, dignity, and that unmistakable proud smile!”</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide" data-slide="2">
+                <div class="slide-card">
+                  <div class="slide-img-box">
+                    <img decoding="async" src="assets/images/rameen-3.jpg" alt="" class="memory-img-bg" aria-hidden="true">
+                    <img decoding="async" src="assets/images/rameen-3.jpg" alt="Rameen bridal grace memory" class="memory-img" loading="lazy">
+                  </div>
+                  <div class="slide-caption">
+                    <span class="caption-badge">Memory 3 • Pure Royalty</span>
+                    <p class="caption-text">“Elegance personified. A queen whose beauty radiates straight from her pure heart.”</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-slide" data-slide="3">
+                <div class="slide-card">
+                  <div class="slide-img-box">
+                    <img decoding="async" src="assets/images/rameen-4.jpg" alt="" class="memory-img-bg" aria-hidden="true">
+                    <img decoding="async" src="assets/images/rameen-4.jpg" alt="Rameen with baby memory" class="memory-img" loading="lazy">
+                  </div>
+                  <div class="slide-caption">
+                    <span class="caption-badge">Memory 4 • Pure Warmth & Love</span>
+                    <p class="caption-text">“The sweetest bond filled with tender smiles, blessing our entire home with barakah.”</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="carousel-slide" data-slide="4">
+                <div class="slide-card">
+                  <div class="slide-img-box">
+                    <img decoding="async" src="assets/images/rameen-5.jpg" alt="" class="memory-img-bg" aria-hidden="true">
+                    <img decoding="async" src="assets/images/rameen-5.jpg" alt="Rameen celebration memory with baby" class="memory-img" loading="lazy">
+                  </div>
+                  <div class="slide-caption">
+                    <span class="caption-badge">Memory 5 • Golden Moments</span>
+                    <p class="caption-text">“Glowing with radiant happiness — 26 years of making all our lives brighter!”</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <button class="carousel-arrow next-arrow" id="carouselNextBtn" aria-label="Next photo">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+
+          </div>
+
+          <!-- Carousel Dots & Swipe Cue -->
+          <div class="carousel-nav-footer">
+            <div class="carousel-dots-list" id="carouselDots">
+              <button class="c-dot active" data-slide-target="0"></button>
+              <button class="c-dot" data-slide-target="1"></button>
+              <button class="c-dot" data-slide-target="2"></button>
+              <button class="c-dot" data-slide-target="3"></button>
+              <button class="c-dot" data-slide-target="4"></button>
+            </div>
+            <span class="swipe-hint">👈 Swipe or use arrows to view photos 👉</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PAGE 3: MAMA'S PAGE ================= -->
+      <section class="page-section" id="page-2" data-page="2">
+        <div class="page-inner note-layout mama-theme">
+          
+          <div class="note-header-wrap">
+            <div class="note-envelope-icon">🌸</div>
+            <h2 class="note-heading gold-gradient-text">From Mama 💌</h2>
+            <p class="note-subheading">A mother's deepest prayer & eternal love</p>
+          </div>
+
+          <!-- Decorative Parchment / Glass Card (NO PHOTO) -->
+          <div class="note-letter-card glass-morphic">
+            <div class="card-gold-border"></div>
+            <div class="wax-seal">
+              <span>M</span>
+            </div>
+
+            <div class="note-text-body handwritten-font note-content-fade" id="mamaNoteText">
+              <p class="stanza stanza-1">Happy Birthday meri pyari Rameen! 🎂❤️🌸</p>
+              
+              <p class="stanza stanza-2">Meri jaan, tum meri zindagi ki sab se khoobsurat nematon mein se ek ho. Allah tumhein hamesha khush, sehatmand aur kamyab rakhe. Tumhari zindagi khushiyon, mohabbat aur barkaton se bhari rahe. Ameen 🤲🏻💗</p>
+              
+              <p class="stanza stanza-3">Tum chahe kitni bhi bari ho jao, mere liye hamesha meri choti si princess rahogi. Allah tumhari har dua qabool kare aur tumhare tamam khwab poore kare. Mama tumse bohat sara pyaar karti hain. 🥹💞</p>
+              
+              <p class="stanza stanza-4 bold-closing"><strong>Happy Birthday meri jaan, Allah tumhein hamesha apni hifazat mein rakhe! 🎀❤️</strong></p>
+            </div>
+
+            <div class="note-footer-signature">
+              <span class="signature-line">— Tumhari pyari Mama 🌸</span>
+            </div>
+          </div>
+
+          <div class="floating-motif-hint">
+            <span>🌸 Floating Dua: May Allah bless your 26th year with infinite happiness 🌸</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PAGE 4: PAPA'S PAGE ================= -->
+      <section class="page-section" id="page-3" data-page="3">
+        <div class="page-inner note-layout papa-theme">
+          
+          <div class="note-header-wrap">
+            <div class="note-envelope-icon">👑</div>
+            <h2 class="note-heading gold-gradient-text">From Papa 💌</h2>
+            <p class="note-subheading">A father's pride, blessing & guidance</p>
+          </div>
+
+          <!-- Decorative Parchment / Glass Card (NO PHOTO) -->
+          <div class="note-letter-card glass-morphic">
+            <div class="card-gold-border"></div>
+            <div class="wax-seal">
+              <span>P</span>
+            </div>
+
+            <div class="note-text-body handwritten-font note-content-fade" id="papaNoteText">
+              <p class="stanza stanza-1">Happy Birthday meri pyari beti Rameen! 🎂❤️✨</p>
+              
+              <p class="stanza stanza-2">Tum meri khushi, mera fakhar aur Allah ki taraf se mila hua ek bohat khoobsurat tohfa ho. Meri dua hai ke Allah tumhein zindagi ke har qadam par kamyabi de, har mushkil se bachaye aur tumhari har jaiz khwahish poori kare. Ameen 🤲🏻💖</p>
+              
+              <p class="stanza stanza-3">Hamesha muskurati raho, zindagi mein bohat taraqqi karo aur apne tamam khwab poore karo. Tum mere liye hamesha meri pyari si princess rahogi. 👑💕</p>
+              
+              <p class="stanza stanza-4 bold-closing"><strong>Papa ki taraf se dher sara pyaar aur duaein. Happy Birthday meri guriya! 🎉❤️</strong></p>
+            </div>
+
+            <div class="note-footer-signature">
+              <span class="signature-line">— Tumhare Papa 👑✨</span>
+            </div>
+          </div>
+
+          <div class="floating-motif-hint">
+            <span>✨ "Tum meri khushi, mera fakhar ho" ✨</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PAGE 5: YASMIN'S PAGE ================= -->
+      <section class="page-section" id="page-4" data-page="4">
+        <div class="page-inner note-layout yasmin-theme">
+          
+          <div class="note-header-wrap">
+            <div class="note-envelope-icon">🎀</div>
+            <h2 class="note-heading gold-gradient-text">From Yasmin 💌</h2>
+            <p class="note-subheading">Your best friend, soul sister & forever fan</p>
+          </div>
+
+          <!-- Decorative Parchment / Glass Card (NO PHOTO) -->
+          <div class="note-letter-card glass-morphic">
+            <div class="card-gold-border"></div>
+            <div class="wax-seal">
+              <span>Y</span>
+            </div>
+
+            <div class="note-text-body handwritten-font note-content-fade" id="yasminNoteText">
+              <p class="stanza stanza-1">Happiest Birthday meri sab se pyari Rameen Api! 🥹💗🎂🎀</p>
+              
+              <p class="stanza stanza-2">Api, tum sirf meri behen nahi, meri best friend, meri khushi aur meri zindagi ka bohat special hissa ho. Main bohat lucky hoon ke Allah ne mujhe tum jaisi pyari behen di. 🫶🏻❤️</p>
+              
+              <p class="stanza stanza-3">Meri dua hai ke Allah tumhari zindagi ko dher sari khushiyon, mohabbat, kamyabi aur sukoon se bhar de. Tumhari muskurahat hamesha qayam rahe aur tumhara har khwab poora ho. Ameen! 🤲🏻💖</p>
+              
+              <p class="stanza stanza-4">Chahe kuch bhi ho jaye, tumhari choti behen hamesha tumse bohat sara pyaar karti rahegi. Tum meri forever favourite person ho! 🥹🎀💋</p>
+              
+              <p class="stanza stanza-5">I love you soooo much, meri Rameen Api! Happy Birthday meri jaan! 🎂💞👑</p>
+            </div>
+
+            <div class="note-footer-signature">
+              <span class="signature-line">Lots of love,</span>
+              <span class="signature-line signature-highlight">Tumhari behna Yasmeen ❤️🫂</span>
+            </div>
+          </div>
+
+          <div class="floating-motif-hint">
+            <span>💖 "Tum meri forever favourite person ho!" 💖</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PAGE 6: MAMOON'S PAGE ================= -->
+      <section class="page-section" id="page-5" data-page="5">
+        <div class="page-inner note-layout mamoon-theme">
+          
+          <div class="note-header-wrap">
+            <div class="note-envelope-icon">🌟</div>
+            <h2 class="note-heading gold-gradient-text">From Mamoon 💌</h2>
+            <p class="note-subheading">A brother's heartfelt words & warmest wishes</p>
+          </div>
+
+          <!-- Decorative Parchment / Glass Card (NO PHOTO) -->
+          <div class="note-letter-card glass-morphic">
+            <div class="card-gold-border"></div>
+            <div class="wax-seal">
+              <span>M</span>
+            </div>
+
+            <div class="note-text-body handwritten-font note-content-fade" id="mamoonNoteText">
+              <p class="stanza stanza-1">Rameen Api,<br>Happy Birthday!</p>
+              
+              <p class="stanza stanza-2">Aaj tumhara birthday hai, is liye dil se dua karta hoon ke Allah tumhein hamesha khush rakhe, sehat de, aur har sapna pura kare.</p>
+              
+              <p class="stanza stanza-3">Tum meri pyari bhna ho. Tumhari muskurahat aur pyar se ghar roshan rehta hai. Main hamesha proud feel karta hoon ke main tumhara bhai hoon.</p>
+              
+              <p class="stanza stanza-4">Allah kare yeh naya saal tumhare liye bohot khoobsurat, successful aur peaceful ho.</p>
+              
+              <p class="stanza stanza-5">Bohot sara pyar aur duas ke saath,</p>
+            </div>
+
+            <div class="note-footer-signature">
+              <span class="signature-line signature-highlight">Tumhara bhai</span>
+            </div>
+          </div>
+
+          <div class="floating-motif-hint">
+            <span>🌟 "Tumhari muskurahat aur pyar se ghar roshan rehta hai" 🌟</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= PAGE 7: FINAL CELEBRATION PAGE ================= -->
+      <section class="page-section" id="page-6" data-page="6">
+        <div class="page-inner finale-layout">
+          
+          <div class="page-title-wrap">
+            <span class="sparkle-tag">🎂 26 Golden Years Of Grace 🎂</span>
+            <h2 class="finale-title gold-gradient-text animate-pulse">Happy 26th Birthday, Rameen! 🎂</h2>
+            <p class="subtitle-text">Born 11 October 2000 • Surrounded by boundless love & prayers</p>
+          </div>
+
+          <!-- Interactive 26th Birthday Cake with Blowable Candles -->
+          <div class="interactive-cake-box" id="cakeBox">
+            <div class="cake-container">
+              <div class="cake-topper-number">
+                <span class="gold-num">2</span><span class="gold-num">6</span>
+              </div>
+              <div class="cake-candles-row" id="candlesRow" title="Click to blow out the candles and make a wish!">
+                <div class="candle candle-1">
+                  <div class="flame" id="flame1"></div>
+                  <div class="candle-stick"></div>
+                </div>
+                <div class="candle candle-2">
+                  <div class="flame" id="flame2"></div>
+                  <div class="candle-stick"></div>
+                </div>
+                <div class="candle candle-3">
+                  <div class="flame" id="flame3"></div>
+                  <div class="candle-stick"></div>
+                </div>
+              </div>
+              <div class="cake-body">
+                <div class="cake-layer cake-layer-top">
+                  <div class="frosting-drip"></div>
+                </div>
+                <div class="cake-layer cake-layer-middle"></div>
+                <div class="cake-layer cake-layer-bottom">
+                  <div class="cake-plate"></div>
+                </div>
+              </div>
+            </div>
+
+            <button class="blow-candle-btn" id="blowCandleBtn">
+              <span class="btn-icon">✨</span>
+              <span class="btn-text" id="blowBtnText">Tap to Blow Candles & Make a Wish! 🕯️</span>
+            </button>
+          </div>
+
+          <!-- Grand Finale Family Keepsake Card -->
+          <div class="finale-signature-card glass-card">
+            <div class="mini-family-avatar">
+              <img decoding="async" src="assets/images/family-group.jpg" alt="Family together" class="mini-family-thumb">
+            </div>
+            <div class="finale-words">
+              <p class="duas-quote">“May Allah always protect your radiant smile, grant you the highest heights of peace, health, success and happiness in every step of your life. Ameen!” 🤲🏻🌸</p>
+              <div class="signed-group">
+                <span class="signed-label">Forever yours with all our love,</span>
+                <span class="signed-names gold-gradient-text">Mama, Papa, Yasmin & Mamoon</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons (Celebration Trigger & Replay) -->
+          <div class="finale-actions">
+            <button class="celebrate-btn ripple-btn" id="burstCelebrationBtn">
+              <span>🎆 More Fireworks & Confetti! 🎉</span>
+            </button>
+            <button class="replay-btn" id="replayJourneyBtn">
+              <span>↺ Relive From Start</span>
+            </button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar (Large animated Next button + Back button) -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        
+        <!-- Small Back Button -->
+        <button class="nav-back-btn" id="navBackBtn" aria-label="Go to previous page">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+          <span class="back-text">Back</span>
+        </button>
+
+        <!-- Large Animated Next Button with Glow, Pulse & Ripple -->
+        <button class="nav-next-btn pulse-glow" id="navNextBtn" aria-label="Next page">
+          <span class="btn-ripple-container"></span>
+          <span class="next-btn-text" id="nextBtnText">Next Wish →</span>
+          <span class="btn-arrow-icon">✨</span>
+        </button>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
